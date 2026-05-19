@@ -184,7 +184,7 @@ msgstr "기본값"
 #, fuzzy
 #| msgid "请输入 0-65535 之间的值"
 msgid "请输入 1-65535 之间的值"
-msgstr "1~65535 사이의 값을 입력해 주세요"
+msgstr ""
 
 #: install.sh:638
 msgid "端口不允许使用, 请重新输入"
@@ -194,7 +194,7 @@ msgstr "포트를 사용할 수 없습니다. 다시 입력해 주세요"
 #, fuzzy
 #| msgid "请选择传输方式"
 msgid "请选择传输协议"
-msgstr "전송 프로토콜을 선택해 주세요"
+msgstr ""
 
 #: install.sh:648 install.sh:2239 install.sh:2276 install.sh:2328
 #: install.sh:3794 install.sh:4013 install.sh:4093 install.sh:4164
@@ -233,7 +233,7 @@ msgstr "구체적인 용도가 명확하지 않은 경우 선택하지 마십시
 #, fuzzy
 #| msgid "已跳过添加简单 ws/gRPC 协议"
 msgid "已跳过添加简单 ws/gRPC/xHTTP 协议"
-msgstr "단순 ws/grpc/xhttp 프로토콜 추가를 건너뛰었습니다"
+msgstr ""
 
 #: install.sh:773 install.sh:793 install.sh:814 install.sh:905 install.sh:922
 #: install.sh:943 install.sh:960 install.sh:981 install.sh:998 install.sh:1017
@@ -440,7 +440,7 @@ msgstr "로드 밸런싱"
 #, fuzzy
 #| msgid "请选择协议为 ws 或 gRPC"
 msgid "请选择协议为 ws 或 gRPC 或 xHTTP"
-msgstr "프로토콜을 ws, grpc 또는 xhttp로 선택해 주세요"
+msgstr ""
 
 #: install.sh:1265 fail2ban_manager.sh:295 fail2ban_manager.sh:313
 #: fail2ban_manager.sh:412 fail2ban_manager.sh:452 traffic_blocker.sh:273
@@ -909,7 +909,7 @@ msgstr "기존 xray 구성 파일을 유지할까요"
 #, fuzzy
 #| msgid "添加简单 ws/gRPC 协议"
 msgid "添加简单 ws/gRPC/xHTTP 协议"
-msgstr "간단한 ws/grpc/xhttp 프로토콜 추가"
+msgstr ""
 
 #: install.sh:2497
 msgid "检测到配置文件, 是否读取配置文件"
@@ -978,7 +978,7 @@ msgstr "정지"
 #, fuzzy
 #| msgid "已设置改版证书自动更新"
 msgid "已清理证书自动更新定时任务"
-msgstr "인증서 자동 업데이트 타이밍 작업을 정리했습니다"
+msgstr ""
 
 #: install.sh:2917 install.sh:2921 install.sh:3584 install.sh:5191
 #: fail2ban_manager.sh:310 fail2ban_manager.sh:488
@@ -1088,7 +1088,7 @@ msgstr "로그 정리"
 #, fuzzy
 #| msgid "传输协议"
 msgid "不支持 xHTTP 传输协议"
-msgstr "xhttp 전송 프로토콜을 지원하지 않습니다"
+msgstr ""
 
 #: install.sh:3466
 msgid "链接分享"
@@ -1379,7 +1379,7 @@ msgstr "다운로드 트래픽 통계 구성"
 #, fuzzy
 #| msgid "下载流量统计配置"
 msgid "流量统计配置解析失败"
-msgstr "트래픽 통계 구성 파싱에 실패했습니다"
+msgstr ""
 
 #: install.sh:4282
 msgid "设置 Xray 流量统计"
@@ -1877,7 +1877,7 @@ msgstr "메뉴로 돌아가기"
 #, fuzzy
 #| msgid "启动失败"
 msgid "服务启动失败"
-msgstr "서비스 시작에 실패했습니다"
+msgstr ""
 
 #: install.sh:5355
 msgid "服务停止失败"
@@ -2259,19 +2259,19 @@ msgstr "미구성"
 #, fuzzy
 #| msgid "BT 下载"
 msgid "BT 下载阻断"
-msgstr "bt 다운로드 차단"
+msgstr ""
 
 #: traffic_blocker.sh:172
 #, fuzzy
 #| msgid "私有网络"
 msgid "私有网络阻断"
-msgstr "사설 네트워크 차단"
+msgstr ""
 
 #: traffic_blocker.sh:173
 #, fuzzy
 #| msgid "广告域名"
 msgid "广告域名阻断"
-msgstr "광고 도메인 차단"
+msgstr ""
 
 #: traffic_blocker.sh:181
 msgid "阻断指定国家/地区的 IP 和域名流量"
