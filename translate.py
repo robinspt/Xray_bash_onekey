@@ -1,12 +1,23 @@
 import time
 import json
 import os
+import re
 import polib
 from openai import OpenAI
 from deep_translator import GoogleTranslator
 from langdetect import detect, DetectorFactory
 
 DetectorFactory.seed = 0
+
+def extract_english_segments(text):
+    return re.findall(r'[A-Za-z][A-Za-z0-9/\-._]+', text)
+
+def restore_english_segments(translated, source):
+    segments = extract_english_segments(source)
+    segments.sort(key=len, reverse=True)
+    for seg in segments:
+        translated = re.sub(r'\b' + re.escape(seg) + r'\b', seg, translated, flags=re.IGNORECASE)
+    return translated
 
 def load_translation_cache(cache_file):
     if os.path.exists(cache_file):
@@ -46,7 +57,13 @@ def translate_text_qwen_mt(text, target_lang):
         api_key=api_key,
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
     )
+    english_terms = extract_english_segments(text)
+    if english_terms:
+        system_content = "Preserve the following English terms exactly as they appear, including casing: " + ", ".join(english_terms)
+    else:
+        system_content = "Preserve all English terms exactly as they appear in the source text, including their original casing."
     messages = [
+        {'role': 'system', 'content': system_content},
         {'role': 'user', 'content': text}
     ]
     translation_options = {
@@ -62,7 +79,8 @@ def translate_text_qwen_mt(text, target_lang):
             }
         )
         translated_text = completion.choices[0].message.content
-        return translated_text.lower().rstrip('.,!?;:')
+        translated_text = translated_text.lower().rstrip('.,!?;:')
+        return restore_english_segments(translated_text, text)
     except Exception as e:
         print(f"Qwen-MT-Plus translation failed: {e}")
         return ""
@@ -73,7 +91,8 @@ def translate_text_google(text, target_lang):
         translated_text = translator.translate(text)
         if translated_text is None:
             return ""
-        return translated_text.lower().rstrip('.,!?;:')
+        translated_text = translated_text.lower().rstrip('.,!?;:')
+        return restore_english_segments(translated_text, text)
     except Exception as e:
         print(f"Google Translate failed: {e}")
         return ""
